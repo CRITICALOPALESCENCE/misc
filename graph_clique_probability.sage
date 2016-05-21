@@ -1,9 +1,9 @@
 def prob_dist(G,depth=0):
+    """ calculate the probability distribution of X, where X is the cardinality of a maximal clique constructed by the obvious random greedy algorithm """
     prefix = "~" * depth
     N = G.num_verts()
     if N == 0:
         return {0: 1}
-    else:
     if G.is_vertex_transitive():
         print prefix + "Graph on %s vertices is VX transitive" % N
         der_G = G.subgraph(G.neighbors(G.vertices()[0]))
